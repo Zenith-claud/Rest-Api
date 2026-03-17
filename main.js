@@ -6,13 +6,12 @@ const bodyParser = require("body-parser");
 const PORT = 3000;
 
 const main = require("./api/maain.js"),
-	index = require("./api/index.js");
+const index = require("./api/index.js");
 
 app.use(cors());
 app.enable('trust proxy');
 app.set("json spaces", 2);
-app.use(secure);app.use(express.static("public"));
-app.set("views", __dirname + "/public");
+app.set("public", __dirname + "/public");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
  extended: true }));
